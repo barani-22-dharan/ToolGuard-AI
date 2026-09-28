@@ -1,0 +1,627 @@
+/* ================================
+   TOOL LIFECYCLE PAGE
+================================ */
+
+.tool-lifecycle-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.tool-lifecycle-main {
+  margin-left: 255px;
+  min-height: 100vh;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+.tool-lifecycle-main.expanded {
+  margin-left: 78px;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.lifecycle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.lifecycle-header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.lifecycle-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.lifecycle-header-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: #eaf2ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* ================================
+   TOOL SELECTION
+================================ */
+
+.lifecycle-selection-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.lifecycle-selection-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #374151;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lifecycle-selection-title svg {
+  color: #2563eb;
+}
+
+.lifecycle-selection-card select {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.lifecycle-selection-card select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.lifecycle-refresh-button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.lifecycle-refresh-button:hover {
+  background: #1d4ed8;
+}
+
+.lifecycle-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   ERROR / LOADING
+================================ */
+
+.lifecycle-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.lifecycle-loading {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  padding: 35px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ================================
+   TOOL SUMMARY
+================================ */
+
+.lifecycle-tool-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.lifecycle-tool-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: #eaf2ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  flex-shrink: 0;
+}
+
+.lifecycle-tool-info {
+  flex: 1;
+}
+
+.lifecycle-tool-info span,
+.lifecycle-stage-summary span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.lifecycle-tool-info h2 {
+  margin: 0 0 5px;
+  font-size: 20px;
+  color: #111827;
+}
+
+.lifecycle-tool-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.lifecycle-stage-summary {
+  min-width: 220px;
+  padding-left: 25px;
+  border-left: 1px solid #e5e7eb;
+}
+
+.lifecycle-stage-summary strong {
+  display: block;
+  color: #2563eb;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.lifecycle-stage-summary small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+/* ================================
+   MAIN LIFECYCLE CARD
+================================ */
+
+.lifecycle-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.lifecycle-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.lifecycle-card-title > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lifecycle-card-title svg {
+  color: #2563eb;
+  font-size: 19px;
+}
+
+.lifecycle-card-title h2 {
+  margin: 0;
+  font-size: 19px;
+  color: #111827;
+}
+
+.lifecycle-card-title > span {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ================================
+   LIFECYCLE JOURNEY
+================================ */
+
+.lifecycle-progress {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 5px 15px;
+}
+
+.lifecycle-stage {
+  min-width: 105px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stage-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.lifecycle-stage.completed .stage-circle {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.lifecycle-stage.current .stage-circle {
+  background: #dbeafe;
+  color: #2563eb;
+  box-shadow: 0 0 0 5px #eff6ff;
+}
+
+.lifecycle-stage.upcoming .stage-circle {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.stage-content span {
+  display: block;
+  font-size: 10px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.stage-content strong {
+  display: block;
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.lifecycle-stage.completed .stage-content strong {
+  color: #16a34a;
+}
+
+.lifecycle-stage.current .stage-content strong {
+  color: #2563eb;
+}
+
+.stage-connector {
+  flex: 0 0 25px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d1d5db;
+  font-size: 12px;
+}
+
+.stage-connector.completed {
+  color: #16a34a;
+}
+
+/* ================================
+   UPDATE CARD
+================================ */
+
+.lifecycle-update-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.lifecycle-update-description {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: -10px 0 20px;
+}
+
+.lifecycle-stage-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.stage-button {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #4b5563;
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.stage-button svg {
+  flex-shrink: 0;
+  color: #9ca3af;
+}
+
+.stage-button:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #f8fbff;
+}
+
+.stage-button.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.stage-button.selected svg {
+  color: #2563eb;
+}
+
+.stage-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.lifecycle-updating {
+  margin-top: 18px;
+  color: #2563eb;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ================================
+   PLM INFO
+================================ */
+
+.plm-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.plm-info-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.plm-info-card span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.plm-info-card strong {
+  color: #111827;
+  font-size: 18px;
+}
+
+/* ================================
+   NO TOOLS
+================================ */
+
+.no-lifecycle-tools {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.no-lifecycle-tools > svg {
+  font-size: 45px;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+.no-lifecycle-tools h2 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 21px;
+}
+
+.no-lifecycle-tools p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.no-lifecycle-tools button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.no-lifecycle-tools button:hover {
+  background: #1d4ed8;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1200px) {
+  .lifecycle-stage-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lifecycle-progress {
+    min-width: 1000px;
+  }
+
+  .lifecycle-card {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .tool-lifecycle-main {
+    margin-left: 78px;
+    padding: 22px;
+  }
+
+  .lifecycle-tool-card {
+    flex-wrap: wrap;
+  }
+
+  .lifecycle-stage-summary {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    padding: 18px 0 0;
+  }
+
+  .plm-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .tool-lifecycle-main,
+  .tool-lifecycle-main.expanded {
+    margin-left: 0;
+    padding: 18px;
+  }
+
+  .lifecycle-header h1 {
+    font-size: 24px;
+  }
+
+  .lifecycle-header-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .lifecycle-selection-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lifecycle-selection-title {
+    margin-bottom: 3px;
+  }
+
+  .lifecycle-selection-card select {
+    width: 100%;
+  }
+
+  .lifecycle-refresh-button {
+    width: 100%;
+  }
+
+  .lifecycle-stage-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .lifecycle-tool-card {
+    padding: 18px;
+  }
+
+  .lifecycle-card,
+  .lifecycle-update-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tool-lifecycle-main,
+  .tool-lifecycle-main.expanded {
+    padding: 14px;
+  }
+
+  .lifecycle-header h1 {
+    font-size: 21px;
+  }
+
+  .lifecycle-header p {
+    font-size: 13px;
+  }
+
+  .lifecycle-header-icon {
+    display: none;
+  }
+
+  .lifecycle-tool-info h2 {
+    font-size: 17px;
+  }
+
+  .lifecycle-card-title h2 {
+    font-size: 16px;
+  }
+
+  .lifecycle-progress {
+    min-width: 950px;
+  }
+}
