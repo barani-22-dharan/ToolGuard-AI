@@ -30,7 +30,7 @@ function RULPrediction({ onNavigate }) {
   const fetchTools = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/tools/"
+        "https://toolguard-ai.onrender.com/api/tools/"
       );
 
       setTools(response.data);
@@ -58,7 +58,7 @@ function RULPrediction({ onNavigate }) {
 
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/predict/rul/${toolId}`
+        `https://toolguard-ai.onrender.com/api/predict/rul/${toolId}`
       );
 
       setRulData(response.data);

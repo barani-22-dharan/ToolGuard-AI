@@ -44,7 +44,7 @@ function Signup({ onBackToLogin }) {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/auth/signup",
+        "https://toolguard-ai.onrender.com/api/auth/signup",
         {
           username: username.trim(),
           email: email.trim(),

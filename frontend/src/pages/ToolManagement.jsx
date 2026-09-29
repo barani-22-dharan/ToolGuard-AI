@@ -17,7 +17,7 @@ import Sidebar from "../components/Sidebar";
 
 import "./ToolManagement.css";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = "https://toolguard-ai.onrender.com/api";
 
 function ToolManagement({ onNavigate }) {
 

@@ -30,7 +30,7 @@ function ToolLifecycle({ onNavigate }) {
   const fetchTools = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/tools/"
+        "https://toolguard-ai.onrender.com/api/tools/"
       );
 
       setTools(response.data);
@@ -58,7 +58,7 @@ function ToolLifecycle({ onNavigate }) {
 
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/lifecycle/${toolId}`
+        `https://toolguard-ai.onrender.com/api/lifecycle/${toolId}`
       );
 
       setLifecycleData(response.data);
@@ -81,7 +81,7 @@ function ToolLifecycle({ onNavigate }) {
 
     try {
       await axios.put(
-        `http://127.0.0.1:8000/api/lifecycle/${selectedToolId}`,
+        `https://toolguard-ai.onrender.com/api/lifecycle/${selectedToolId}`,
         {
           lifecycle_stage: stage
         }

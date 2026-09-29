@@ -40,7 +40,7 @@ function ForgotPassword({ onBackToLogin }) {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/auth/forgot-password",
+        "https://toolguard-ai.onrender.com/api/auth/forgot-password",
         {
           email: email.trim()
         }
@@ -91,7 +91,7 @@ function ForgotPassword({ onBackToLogin }) {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/auth/reset-password",
+        "https://toolguard-ai.onrender.com/api/auth/reset-password",
         {
           email: email.trim(),
           new_password: newPassword

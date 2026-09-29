@@ -30,7 +30,7 @@ function MaintenanceAlerts({ onNavigate }) {
   const fetchTools = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/tools/"
+        "https://toolguard-ai.onrender.com/api/tools/"
       );
 
       setTools(response.data);
@@ -59,7 +59,7 @@ function MaintenanceAlerts({ onNavigate }) {
 
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/maintenance/${toolId}`
+        `https://toolguard-ai.onrender.com/api/maintenance/${toolId}`
       );
 
       setMaintenanceData(response.data);
