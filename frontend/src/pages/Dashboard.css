@@ -1,804 +1,456 @@
-/* =========================================
-   DASHBOARD PAGE
-========================================= */
+
+/* =========================================================
+   TOOLGUARD AI - DASHBOARD
+   ========================================================= */
 
 .dashboard-page {
   min-height: 100vh;
-  width: 100%;
-  display: flex;
-
-  background: #f5f8fb;
-
-  color: #172b3a;
-
-  font-family:
-    "Inter",
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
-
-/* =========================================
-   SIDEBAR
-========================================= */
-
-.dashboard-sidebar {
-  width: 255px;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-
-  background: #102a43;
-
-  color: white;
-
-  z-index: 1000;
-
-  transition:
-    width 0.3s ease,
-    transform 0.3s ease;
-
-  box-shadow:
-    4px 0 18px rgba(16, 42, 67, 0.12);
-}
-
-
-.dashboard-sidebar.collapsed {
-  width: 78px;
-}
-
-
-/* =========================================
-   SIDEBAR BRAND
-========================================= */
-
-.sidebar-brand {
-  height: 82px;
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 20px;
-
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.08);
-
-  gap: 12px;
-
-  flex-shrink: 0;
-}
-
-
-.sidebar-brand-icon {
-  width: 43px;
-  height: 43px;
-
-  min-width: 43px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 12px;
-
-  background: #2388c9;
-
-  color: white;
-
-  font-size: 21px;
-
-  box-shadow:
-    0 6px 15px rgba(35, 136, 201, 0.25);
-}
-
-
-.sidebar-brand-text {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-
-.sidebar-brand-text h1 {
-  margin: 0;
-
-  font-size: 19px;
-
-  font-weight: 700;
-
-  letter-spacing: -0.4px;
-}
-
-
-.sidebar-brand-text h1 span {
-  color: #45a9e8;
-}
-
-
-.sidebar-brand-text p {
-  margin: 3px 0 0;
-
-  font-size: 10px;
-
-  color: #a9bfd0;
-
-  letter-spacing: 0.5px;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================================
-   SIDEBAR NAVIGATION
-========================================= */
-
-.sidebar-navigation {
-  flex: 1;
-
-  padding: 22px 12px;
-
-  overflow-y: auto;
-}
-
-
-.sidebar-section-title {
-  margin: 0 10px 12px;
-
-  min-height: 15px;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  color: #7892a8;
-
-  letter-spacing: 1.2px;
-}
-
-
-/* =========================================
-   SIDEBAR ITEM
-========================================= */
-
-.sidebar-item {
-  width: 100%;
-
-  min-height: 48px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
-
-  margin-bottom: 6px;
-
-  padding: 0 14px;
-
-  border: none;
-
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: #b7c9d8;
-
-  font-size: 13px;
-
-  font-weight: 500;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-
-.sidebar-item svg {
-  width: 18px;
-  min-width: 18px;
-
-  font-size: 17px;
-}
-
-
-.sidebar-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-
-  color: white;
-
-  transform: translateX(2px);
-}
-
-
-.sidebar-item.active {
-  background: #2388c9;
-
-  color: white;
-
-  box-shadow:
-    0 6px 14px rgba(35, 136, 201, 0.22);
-}
-
-
-/* Collapsed sidebar */
-
-.dashboard-sidebar.collapsed .sidebar-item {
-  justify-content: center;
-
-  padding: 0;
-}
-
-
-.dashboard-sidebar.collapsed .sidebar-item svg {
-  margin: 0;
-}
-
-
-/* =========================================
-   SIDEBAR BOTTOM
-========================================= */
-
-.sidebar-bottom {
-  padding: 15px 12px 18px;
-
-  border-top:
-    1px solid rgba(255, 255, 255, 0.08);
-}
-
-
-.sidebar-user {
-  display: flex;
-  align-items: center;
-
-  gap: 11px;
-
-  padding: 10px 12px;
-
-  margin-bottom: 8px;
-
-  border-radius: 10px;
-
-  background:
-    rgba(255, 255, 255, 0.05);
-}
-
-
-.sidebar-user > svg {
-  width: 29px;
-  height: 29px;
-
-  min-width: 29px;
-
-  color: #8fc9eb;
-
-  font-size: 29px;
-}
-
-
-.sidebar-user div {
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-
-  white-space: nowrap;
-}
-
-
-.sidebar-user strong {
-  font-size: 12px;
-
-  color: white;
-}
-
-
-.sidebar-user span {
-  margin-top: 2px;
-
-  font-size: 10px;
-
-  color: #91a9bc;
-}
-
-
-/* Logout */
-
-.sidebar-logout {
-  width: 100%;
-
-  min-height: 43px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 13px;
-
-  padding: 0 13px;
-
-  border: none;
-
-  border-radius: 9px;
-
-  background: transparent;
-
-  color: #b7c9d8;
-
-  font-size: 12px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-
-.sidebar-logout svg {
-  font-size: 16px;
-
-  min-width: 16px;
-}
-
-
-.sidebar-logout:hover {
-  background: rgba(255, 255, 255, 0.08);
-
-  color: #ffb4a8;
-}
-
-
-.dashboard-sidebar.collapsed .sidebar-logout {
-  justify-content: center;
-
-  padding: 0;
-}
-
-
-/* =========================================
+/* =========================================================
    MAIN AREA
-========================================= */
+   ========================================================= */
 
 .dashboard-main {
-  width: calc(100% - 255px);
-
   min-height: 100vh;
-
-  margin-left: 255px;
-
-  transition:
-    margin-left 0.3s ease,
-    width 0.3s ease;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
 }
 
+.dashboard-main.expanded {
+  margin-left: 0;
+}
 
-/* =========================================
+/* =========================================================
    TOP NAVBAR
-========================================= */
+   ========================================================= */
 
 .dashboard-navbar {
-  height: 82px;
+  height: 76px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 
   display: flex;
   align-items: center;
 
+  padding: 0 30px;
   gap: 18px;
 
-  padding: 0 32px;
-
-  background: white;
-
-  border-bottom:
-    1px solid #e6edf3;
-
   position: sticky;
-
   top: 0;
-
-  z-index: 900;
+  z-index: 50;
 }
 
+/* Sidebar Toggle */
 
 .sidebar-toggle {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #f1f5f9;
+  color: #1e293b;
+
+  font-size: 20px;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #e1e9f0;
-
-  border-radius: 9px;
-
-  background: white;
-
-  color: #526b7d;
-
-  font-size: 16px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: 0.2s ease;
 }
-
 
 .sidebar-toggle:hover {
-  background: #eef7fc;
-
-  border-color: #b8dff4;
-
-  color: #2388c9;
+  background: #e2e8f0;
 }
 
+/* Navbar Title */
 
 .navbar-title {
   flex: 1;
 }
 
-
 .navbar-title h2 {
   margin: 0;
 
-  font-size: 17px;
-
-  color: #183b56;
-
+  font-size: 20px;
   font-weight: 700;
-}
 
+  color: #111827;
+}
 
 .navbar-title p {
   margin: 3px 0 0;
 
-  font-size: 11px;
-
-  color: #7c91a1;
+  font-size: 12px;
+  color: #64748b;
 }
 
-
-/* =========================================
-   NAVBAR USER
-========================================= */
+/* User */
 
 .dashboard-user {
   display: flex;
   align-items: center;
-
   gap: 10px;
 }
 
-
 .dashboard-user > svg {
-  width: 36px;
-  height: 36px;
-
-  color: #2388c9;
-
-  font-size: 36px;
+  font-size: 38px;
+  color: #2563eb;
 }
-
 
 .dashboard-user div {
   display: flex;
   flex-direction: column;
 }
 
-
 .dashboard-user strong {
-  font-size: 12px;
-
-  color: #29475a;
+  font-size: 14px;
+  color: #111827;
 }
-
 
 .dashboard-user span {
+  font-size: 11px;
+  color: #64748b;
   margin-top: 2px;
-
-  font-size: 10px;
-
-  color: #8a9baa;
 }
 
-
-/* =========================================
-   DASHBOARD CONTENT
-========================================= */
+/* =========================================================
+   CONTENT
+   ========================================================= */
 
 .dashboard-content {
-  width: 100%;
-
+  padding: 32px;
   max-width: 1500px;
-
   margin: 0 auto;
-
-  padding: 30px 34px 40px;
 }
 
-
-/* =========================================
+/* =========================================================
    HEADING
-========================================= */
+   ========================================================= */
 
 .dashboard-heading {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-end;
-
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
-
 
 .dashboard-label {
-  margin: 0 0 7px;
+  margin: 0 0 6px;
 
-  font-size: 10px;
-
+  font-size: 11px;
   font-weight: 700;
 
-  color: #2388c9;
-
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
+  color: #2563eb;
 }
-
 
 .dashboard-heading h2 {
   margin: 0;
 
-  font-size: 27px;
+  font-size: 28px;
+  font-weight: 750;
 
-  color: #183b56;
-
-  font-weight: 700;
-
-  letter-spacing: -0.5px;
+  color: #111827;
 }
 
+.dashboard-heading > div > p:last-child {
+  margin: 8px 0 0;
 
-.dashboard-heading p:last-child {
-  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
 
-  font-size: 13px;
-
-  color: #748898;
+  color: #64748b;
 }
 
-
-/* =========================================
+/* =========================================================
    DASHBOARD CARDS
-========================================= */
+   ========================================================= */
 
 .dashboard-cards {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(4, minmax(0, 1fr));
 
-  gap: 18px;
+  gap: 20px;
 
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 
-
 .dashboard-card {
-  min-height: 120px;
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  padding: 22px;
 
   display: flex;
   align-items: center;
 
   gap: 16px;
 
-  padding: 20px;
-
-  background: white;
-
-  border:
-    1px solid #e5edf3;
-
-  border-radius: 14px;
-
   box-shadow:
-    0 5px 18px rgba(31, 61, 82, 0.05);
+    0 4px 14px rgba(15, 23, 42, 0.04);
 
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-
 .dashboard-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 
   box-shadow:
-    0 9px 24px rgba(31, 61, 82, 0.09);
+    0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
+/* Card Icon */
 
 .card-icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
 
-  min-width: 48px;
+  min-width: 52px;
+
+  border-radius: 13px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 12px;
-
-  font-size: 20px;
+  font-size: 22px;
 }
-
 
 .card-icon.blue {
-  background: #eaf5fc;
-
-  color: #2388c9;
+  background: #dbeafe;
+  color: #2563eb;
 }
-
 
 .card-icon.green {
-  background: #eaf8f1;
-
-  color: #2e9b69;
+  background: #dcfce7;
+  color: #16a34a;
 }
-
 
 .card-icon.orange {
-  background: #fff5e6;
-
-  color: #e49a28;
+  background: #ffedd5;
+  color: #ea580c;
 }
-
 
 .card-icon.red {
-  background: #fff0ee;
-
-  color: #dc6659;
+  background: #fee2e2;
+  color: #dc2626;
 }
 
+/* Card Text */
 
 .dashboard-card span {
   display: block;
 
-  font-size: 11px;
+  font-size: 13px;
+  color: #64748b;
 
-  color: #7a8e9d;
-
-  font-weight: 500;
+  margin-bottom: 5px;
 }
-
 
 .dashboard-card h3 {
-  margin: 4px 0 3px;
+  margin: 0;
 
-  font-size: 25px;
+  font-size: 27px;
+  font-weight: 750;
 
-  color: #183b56;
+  color: #111827;
 }
-
 
 .dashboard-card small {
   display: block;
 
-  font-size: 9px;
+  margin-top: 4px;
 
-  color: #98a7b3;
+  font-size: 11px;
+  color: #94a3b8;
 }
 
-
-/* =========================================
+/* =========================================================
    DASHBOARD GRID
-========================================= */
+   ========================================================= */
 
 .dashboard-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(3, minmax(0, 1fr));
 
-  gap: 18px;
+  gap: 20px;
 
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
+/* =========================================================
+   DASHBOARD PANELS
+   ========================================================= */
 
 .dashboard-panel {
-  min-height: 245px;
+  background: #ffffff;
 
-  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
 
-  border:
-    1px solid #e5edf3;
+  padding: 22px;
 
-  border-radius: 14px;
-
-  padding: 21px;
+  min-height: 250px;
 
   box-shadow:
-    0 5px 18px rgba(31, 61, 82, 0.05);
+    0 4px 14px rgba(15, 23, 42, 0.04);
 }
-
-
-.dashboard-panel:last-child {
-  grid-column: 1 / -1;
-}
-
-
-/* =========================================
-   PANEL HEADER
-========================================= */
 
 .panel-header {
   display: flex;
-
   align-items: center;
 
-  gap: 12px;
+  gap: 13px;
 
-  padding-bottom: 16px;
-
-  border-bottom:
-    1px solid #edf2f5;
+  margin-bottom: 22px;
 }
 
-
 .panel-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+  color: #2563eb;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 10px;
-
-  background: #eef7fc;
-
-  color: #2388c9;
-
-  font-size: 17px;
+  font-size: 19px;
 }
-
 
 .panel-header h3 {
   margin: 0;
 
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
 
-  color: #24465b;
+  color: #111827;
 }
-
 
 .panel-header p {
-  margin: 3px 0 0;
+  margin: 4px 0 0;
 
-  font-size: 10px;
-
-  color: #899aa7;
+  font-size: 12px;
+  color: #64748b;
 }
 
+/* =========================================================
+   TOOL PREVIEW
+   ========================================================= */
 
-/* =========================================
+.dashboard-tool-preview {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.dashboard-tool-preview > div {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+
+  background: #f8fafc;
+
+  border-radius: 9px;
+}
+
+.dashboard-tool-preview span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.dashboard-tool-preview strong {
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.dashboard-tool-preview button,
+.sensor-preview button {
+  margin-top: 4px;
+
+  width: 100%;
+
+  border: none;
+  border-radius: 9px;
+
+  padding: 11px 14px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.dashboard-tool-preview button:hover,
+.sensor-preview button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================================
+   SENSOR PREVIEW
+   ========================================================= */
+
+.sensor-preview {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.sensor-preview > div {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+
+  background: #f8fafc;
+
+  border-radius: 9px;
+}
+
+.sensor-preview span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.sensor-preview strong {
+  font-size: 13px;
+  color: #1e293b;
+}
+
+/* =========================================================
    EMPTY DASHBOARD
-========================================= */
+   ========================================================= */
 
 .empty-dashboard {
-  min-height: 155px;
+  min-height: 160px;
 
   display: flex;
   flex-direction: column;
@@ -809,423 +461,248 @@
   text-align: center;
 }
 
-
 .empty-dashboard > svg {
+  font-size: 30px;
+
+  color: #94a3b8;
+
   margin-bottom: 10px;
-
-  font-size: 28px;
-
-  color: #bfd1dd;
 }
-
 
 .empty-dashboard h4 {
   margin: 0;
 
-  font-size: 13px;
+  font-size: 14px;
 
-  color: #526b7d;
+  color: #475569;
 }
-
 
 .empty-dashboard p {
-  max-width: 300px;
-
   margin: 6px 0 0;
 
-  font-size: 10px;
+  max-width: 250px;
 
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.5;
 
-  color: #97a7b2;
+  color: #94a3b8;
 }
 
-
-/* =========================================
-   SENSOR PREVIEW
-========================================= */
-
-.sensor-preview {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 14px;
-
-  padding-top: 20px;
-}
-
-
-.sensor-preview > div {
-  padding: 18px;
-
-  border-radius: 10px;
-
-  background: #f7fafc;
-
-  border:
-    1px solid #edf2f5;
-}
-
-
-.sensor-preview span {
-  display: block;
-
-  margin-bottom: 8px;
-
-  font-size: 10px;
-
-  color: #8194a2;
-}
-
-
-.sensor-preview strong {
-  font-size: 20px;
-
-  color: #29475a;
-}
-
-
-/* =========================================
+/* =========================================================
    PLM PANEL
-========================================= */
+   ========================================================= */
 
 .plm-dashboard-panel {
-  min-height: 95px;
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 22px 24px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 16px;
+  gap: 18px;
 
-  padding: 20px 22px;
+  margin-bottom: 20px;
 
-  background: #eef7fc;
-
-  border:
-    1px solid #d6ebf7;
-
-  border-radius: 14px;
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.04);
 }
 
-
 .plm-dashboard-icon {
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
 
-  min-width: 46px;
+  min-width: 52px;
+
+  border-radius: 13px;
+
+  background: #ede9fe;
+  color: #7c3aed;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 12px;
-
-  background: white;
-
-  color: #2388c9;
-
-  font-size: 19px;
+  font-size: 22px;
 }
-
 
 .plm-dashboard-panel > div:nth-child(2) {
   flex: 1;
 }
 
-
 .plm-dashboard-panel h3 {
   margin: 0;
 
-  font-size: 14px;
-
-  color: #21455b;
-}
-
-
-.plm-dashboard-panel p {
-  max-width: 850px;
-
-  margin: 5px 0 0;
-
-  font-size: 10px;
-
-  line-height: 1.6;
-
-  color: #6f8797;
-}
-
-
-.plm-status {
-  padding: 7px 12px;
-
-  border-radius: 20px;
-
-  background: #e7f7ee;
-
-  color: #2d9164;
-
-  font-size: 9px;
-
+  font-size: 16px;
   font-weight: 700;
 
+  color: #111827;
+}
+
+.plm-dashboard-panel p {
+  margin: 6px 0 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: #64748b;
+}
+
+.plm-status {
+  border: none;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border-radius: 9px;
+
+  padding: 11px 18px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
   white-space: nowrap;
+
+  transition: 0.2s ease;
 }
 
+.plm-status:hover {
+  background: #1d4ed8;
 
-/* =========================================
-   COLLAPSED SIDEBAR MAIN AREA
-========================================= */
-
-.dashboard-sidebar.collapsed
-  ~ .dashboard-main {
-
-  width: calc(100% - 78px);
-
-  margin-left: 78px;
+  transform: translateY(-1px);
 }
 
+/* =========================================================
+   MAINTENANCE
+   ========================================================= */
 
-/* =========================================
-   SCROLLBAR
-========================================= */
-
-.dashboard-sidebar::-webkit-scrollbar,
-.sidebar-navigation::-webkit-scrollbar {
-  width: 4px;
+.maintenance-dashboard-panel {
+  margin-bottom: 0;
 }
 
+.maintenance-icon {
+  background: #fff7ed;
 
-.dashboard-sidebar::-webkit-scrollbar-thumb,
-.sidebar-navigation::-webkit-scrollbar-thumb {
-  background: #36556d;
-
-  border-radius: 10px;
+  color: #ea580c;
 }
 
-
-/* =========================================
-   RESPONSIVE - 1200px
-========================================= */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 1200px) {
-
   .dashboard-cards {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2, minmax(0, 1fr));
   }
-
-}
-
-
-/* =========================================
-   RESPONSIVE - 900px
-========================================= */
-
-@media (max-width: 900px) {
-
-  .dashboard-sidebar {
-    width: 78px;
-  }
-
-
-  .dashboard-sidebar .sidebar-brand {
-    justify-content: center;
-
-    padding: 0;
-  }
-
-
-  .sidebar-brand-text,
-  .sidebar-section-title,
-  .sidebar-item span,
-  .sidebar-user div,
-  .sidebar-logout span {
-    display: none;
-  }
-
-
-  .sidebar-item {
-    justify-content: center;
-
-    padding: 0;
-  }
-
-
-  .sidebar-user {
-    justify-content: center;
-
-    padding: 8px 0;
-  }
-
-
-  .sidebar-logout {
-    justify-content: center;
-
-    padding: 0;
-  }
-
-
-  .dashboard-main {
-    width: calc(100% - 78px);
-
-    margin-left: 78px;
-  }
-
-
-  .dashboard-sidebar.collapsed
-    ~ .dashboard-main {
-
-    width: calc(100% - 78px);
-
-    margin-left: 78px;
-  }
-
 
   .dashboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
-
-
-  .dashboard-panel:last-child {
-    grid-column: auto;
-  }
-
 }
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-/* =========================================
-   RESPONSIVE - 700px
-========================================= */
-
-@media (max-width: 700px) {
-
-  .dashboard-navbar {
-    padding: 0 18px;
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0;
   }
 
+  .dashboard-content {
+    padding: 20px 16px;
+  }
+
+  .dashboard-navbar {
+    height: 68px;
+
+    padding: 0 16px;
+  }
+
+  .navbar-title h2 {
+    font-size: 16px;
+  }
 
   .navbar-title p {
     display: none;
   }
 
-
   .dashboard-user div {
     display: none;
   }
 
-
-  .dashboard-content {
-    padding: 24px 18px 30px;
+  .dashboard-user > svg {
+    font-size: 32px;
   }
-
 
   .dashboard-heading h2 {
-    font-size: 22px;
+    font-size: 23px;
   }
-
 
   .dashboard-cards {
     grid-template-columns: 1fr;
+
+    gap: 14px;
   }
 
-
-  .sensor-preview {
+  .dashboard-grid {
     grid-template-columns: 1fr;
+
+    gap: 16px;
   }
 
+  .dashboard-panel {
+    min-height: auto;
+  }
 
   .plm-dashboard-panel {
+    flex-direction: column;
+
     align-items: flex-start;
 
-    flex-wrap: wrap;
+    padding: 20px;
   }
-
 
   .plm-status {
-    margin-left: 62px;
+    width: 100%;
   }
-
 }
 
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
-/* =========================================
-   RESPONSIVE - 500px
-========================================= */
-
-@media (max-width: 500px) {
-
-  .dashboard-sidebar {
-    width: 0;
-
-    transform: translateX(-100%);
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 16px 12px;
   }
-
-
-  .dashboard-sidebar.collapsed {
-    width: 0;
-
-    transform: translateX(-100%);
-  }
-
-
-  .dashboard-main {
-    width: 100%;
-
-    margin-left: 0;
-  }
-
-
-  .dashboard-sidebar.collapsed
-    ~ .dashboard-main {
-
-    width: 100%;
-
-    margin-left: 0;
-  }
-
 
   .dashboard-navbar {
-    height: 70px;
+    padding: 0 12px;
   }
 
-
-  .dashboard-content {
-    padding: 20px 14px 25px;
+  .dashboard-card {
+    padding: 18px;
   }
 
+  .dashboard-card h3 {
+    font-size: 24px;
+  }
+
+  .dashboard-panel {
+    padding: 18px;
+  }
 
   .dashboard-heading {
     margin-bottom: 20px;
   }
-
-
-  .dashboard-heading h2 {
-    font-size: 20px;
-  }
-
-
-  .dashboard-heading p:last-child {
-    font-size: 11px;
-  }
-
-
-  .dashboard-card {
-    min-height: 105px;
-
-    padding: 16px;
-  }
-
-
-  .dashboard-panel {
-    padding: 17px;
-  }
-
-
-  .plm-dashboard-panel {
-    padding: 17px;
-  }
-
 }
